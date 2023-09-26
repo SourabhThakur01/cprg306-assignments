@@ -75,62 +75,62 @@ export default function ItemList(){
         <div>
           <Item
           name={item1.name}
-          date={item1.date}
+          quantity={item1.quantity}
           category={item1.category}
           />
           <Item
           name={item2.name}
-          date={item2.date}
+          quantity={item2.quantity}
           category={item2.category}
           />
           <Item
           name={item3.name}
-          date={item3.date}
+          quantity={item3.quantity}
           category={item3.category}
           />
           <Item
           name={item4.name}
-          date={item4.date}
+          quantity={item4.quantity}
           category={item4.category}
           />
           <Item
           name={item5.name}
-          date={item5.date}
+          quantity={item5.quantity}
           category={item5.category}
           />
           <Item
           name={item6.name}
-          date={item6.date}
+          quantity={item6.quantity}
           category={item6.category}
           />
           <Item
           name={item7.name}
-          date={item7.date}
+          quantity={item7.quantity}
           category={item7.category}
           />
           <Item
           name={item8.name}
-          date={item8.date}
+          quantity={item8.quantity}
           category={item8.category}
           />
           <Item
           name={item9.name}
-          date={item9.date}
+          quantity={item9.quantity}
           category={item9.category}
           />
           <Item
           name={item10.name}
-          date={item10.date}
+          quantity={item10.quantity}
           category={item10.category}
           />
           <Item
           name={item11.name}
-          date={item11.date}
+          quantity={item11.quantity}
           category={item11.category}
           />
           <Item
           name={item12.name}
-          date={item12.date}
+          quantity={item12.quantity}
           category={item12.category}
           />
         </div>
