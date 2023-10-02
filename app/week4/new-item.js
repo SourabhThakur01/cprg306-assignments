@@ -2,17 +2,11 @@
 
 import { useState } from "react";
 
-export default function setName() {
-    const [name] = useState("");
-}
+export default function NewItem() {
+    const [name,setName] = useState("");
+    const [quantity, setQuantity] = useState(1);
+    const [category, setCategory] = useState("produce");
 
-export default function setQuantity() {
-    const [quantity] = useState(1);
-}
-
-export default function setCategory() {
-    const [category] = useState("produce");
-}
 
 const handleSubmit = (event) => {
     event.preventDefault();
@@ -28,4 +22,5 @@ const handleSubmit = (event) => {
     setName("");
     setQuantity(1);
     setCategory("produce");
+}
 }
