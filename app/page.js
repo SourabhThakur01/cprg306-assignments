@@ -6,7 +6,8 @@ import StudentInfo from "./studentInfo";
                 <h1 class="text-4xl">CPRG 306: Web Development 2 - Assignments</h1>
                 <StudentInfo/>
                 <Link href="./week2">week 2</Link><br/>
-                <Link href="./week3">week 3</Link>
+                <Link href="./week3">week 3</Link><br/>
+                <Link href="./week4">week 4</Link>
                 </div>
         );
     }
