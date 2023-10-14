@@ -18,7 +18,7 @@ export default function ItemList() {
 
         <div className = "flex">
             <h1 className="text-xl my-3">Sort by:</h1>
-            <button onClick={() => setSortBy("name")} className=" p-2 m-2 h-10 bg-gray-800 border rounded-md hover:bg-blue-500 ">Name</button>
+            <button onClick= {() => setSortBy("name")} className=" p-2 m-2 h-10 bg-gray-800 border rounded-md hover:bg-blue-500 ">Name</button>
             <button onClick={() => setSortBy("category")}className=" p-2 m-2 h-10 bg-gray-800 border rounded-md hover:bg-blue-500 ">Category</button>
 
             <ul className = "m-4 p-30">
