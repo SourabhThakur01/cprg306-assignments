@@ -16,15 +16,15 @@ export default function ItemList() {
 
     return(
 
-        <div className="text-center">
-            <h1 className="text-xl m-1 px-2">Sort by:</h1>
-            <button onClick= {() => setSortBy("name")} className = {`px-2 m-2 h-10 bg-gray-800 border rounded-md hover:bg-blue-500 ${sortBy === 'name'? "bg-blue-500" : ""}`}>Name</button>
-            <button onClick={() => setSortBy("category")}className= {`px-2 m-2 h-10 bg-gray-800 border rounded-md hover:bg-blue-500 ${sortBy === 'category'? "bg-blue-500" : ""}`}>Category</button>
+        <div className="text-center font-mono">
+            <h1 className="text-xl m-1 px-2 text-yellow-400 font-bold">Sort by:</h1>
+            <button onClick= {() => setSortBy("name")} className = {`px-4 m-2 h-10 border rounded-full hover:bg-blue-500 ${sortBy === "name"? "bg-red-500":""}`}>Name</button>
+            <button onClick={() => setSortBy("category")}className= {`px-4 m-2 h-10 border rounded-full hover:bg-blue-500 ${sortBy === "category"? "bg-green-500":""}`}>Category</button>
             
-            <div className="m-2">
-            <ul className="content border rounded-full max-h-lg max-w-3xl">
+            <div className="m-2 flex justify-center ">
+            <ul className="border rounded-3xl w-[700px] bg-green-300 ">
                 {sortItems().map((item) => (
-                    <li className= "mx-5 px-2 border rounded-full bg-gray-800 border-gray-800  my-5 py-1 max-w-sm" key={item.id}>
+                    <li className= "ml-[150px] border rounded-full bg-orange-800 my-5 max-w-sm h-10 hover:max-w-md hover:bg-purple-800 " key={item.id}>
                         {Item(item)}
                     </li>
                 ))}
