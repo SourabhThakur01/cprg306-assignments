@@ -1,59 +1,39 @@
 "use client";
-import { useUserAuth } from "./_utils/auth-context";
-import Link from "next/link";  // Ensure this import is present if you're using the Link component
+import React, { useState } from 'react';
+import NewItem from './new-item.js';
+import ItemList from './item-list.js';
+import MealIdeas from './meal-ideas.js';
+import itemsData from './items.json';
 
-function LandingPage() {
-    const { user, gitHubSignIn, firebaseSignOut } = useUserAuth();
+function Page() {
+  const [items, setItems] = useState(itemsData);
+  const [selectedItemName, setSelectedItemName] = useState('');
 
-    const handleLogin = async () => {
-        await gitHubSignIn();
-    };
+  const handleAddItem = (newItem) => {
+    setItems(prevItems => [...prevItems, newItem]);
+  };
 
-    const handleLogout = async () => {
-        await firebaseSignOut();
-    };
+  const handleItemSelect = (itemName) => {
+    const cleanedName = itemName.split(',')[0].trim().replace(/[^a-zA-Z ]/g, "");
+    setSelectedItemName(cleanedName);
+  };
 
-    if (!user) {
-        return (
-            <main className="bg-gray-100 min-h-screen flex items-center justify-center">
-                <div className="bg-white p-8 rounded-lg shadow-md max-w-md mx-auto text-center">
-                    <h1 className="text-3xl font-semibold text-gray-800 mb-4">
-                        Shopping List App
-                    </h1>
-                    <button 
-                        onClick={handleLogin} 
-                        className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
-                    >
-                        Login with GitHub
-                    </button>
-                </div>
-            </main>
-        );
-    } else {
-        return (
-            <main className="bg-gray-100 min-h-screen flex items-center justify-center">
-                <div className="bg-white p-8 rounded-lg shadow-md max-w-md mx-auto text-center">
-                    <h1 className="text-3xl font-semibold text-gray-800 mb-4">
-                        Welcome back!
-                    </h1>
-                    <p className="text-gray-800 text-lg mb-4">
-                        Welcome, {user.displayName} ({user.email})
-                    </p>
-                    <button 
-                        onClick={handleLogout} 
-                        className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 mb-4"
-                    >
-                        Logout
-                    </button>
-                    <div className="mt-4">
-                        <Link href="week8/shopping-list" className="text-blue-500 hover:underline">
-                            Go to Shopping List
-                        </Link>
-                    </div>
-                </div>
-            </main>
-        );
-    }
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <h1 className="text-3xl font-bold text-gray-800 mb-4">Shopping List</h1>
+      <div style={{ display: 'flex', justifyContent: 'center', width: '100%', gap: '20px' }}>
+        <div>
+          <h2 className="text-2xl font-bold text-gray-800 mb-4">Add New Item</h2>
+          <NewItem onAddItem={handleAddItem} />
+          <ItemList items={items} onItemSelect={handleItemSelect} />
+        </div>
+        <div>
+          <h2 className="text-2xl font-bold text-gray-800 mb-4">Meal Ideas</h2>
+          <MealIdeas ingredient={selectedItemName} />
+        </div>
+      </div>
+    </div>
+  );
 }
 
-export default LandingPage;
+export default Page;
