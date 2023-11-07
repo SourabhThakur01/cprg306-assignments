@@ -11,6 +11,7 @@ import StudentInfo from "./studentInfo";
                 <Link href="./week5">week 5</Link><br/>
                 <Link href="./week6">week 6</Link><br/>
                 <Link href="./week7">week 7</Link><br/>
+                <Link href="./week8">week 8</Link><br/>
                 </div>
         );
     }
