@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from 'react';
-import { useUserAuth } from "../auth-context.js"; 
+import { useUserAuth } from "../_utils/auth-context.js"; 
 import NewItem from './new-item.js';
 import ItemList from './item-list.js';
 import MealIdeas from './meal-ideas.js';

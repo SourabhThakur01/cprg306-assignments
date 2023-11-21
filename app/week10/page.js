@@ -1,5 +1,5 @@
 "use client";
-import { useUserAuth } from "./auth-context";
+import { useUserAuth } from "./_utils/auth-context";
 import Link from "next/link";  // Ensure this import is present if you're using the Link component
 
 function LandingPage() {
